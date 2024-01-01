@@ -14,7 +14,7 @@ Initially, the works were classified as "Top secret". Then they were downgraded 
 ## Feistel network
 Feistel network, or Feistel construction (English Feistel network, Feistel cipher), is one of the methods of building block ciphers. The network consists of cells called Feistel cells. Data and a key are received at the input of each cell. At the output of each cell, the modified data and the modified key are received. All cells are of the same type, and it is said that the network is a certain repetitive (integrated) structure. The key is selected depending on the encryption/decryption algorithm and changes when moving from one cell to another. The same operations are performed during encryption and decryption; only the order of the keys differs. Due to the simplicity of operations, the Feistel network is easy to implement both programmatically and hardware. A number of block ciphers (DES, RC2, RC5, RC6, Blowfish, FEAL, CAST-128, TEA, XTEA, XXTEA, etc.) use the Feistel network as the basis. An alternative to the Feistel network is the substitution-permutation network (AES, etc.).
 
-[!Feistel Network](./img/feistel_network.png)
+![FeistelNetwork](./img/feistel_network.png)
 
 # How the algorithm works
 
