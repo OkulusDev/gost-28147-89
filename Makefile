@@ -1,6 +1,6 @@
 # Компиляторы
-CXX := clang++
-CXX_FLAGS := -g -Wall -O2 -mllvm --x86-asm-syntax=intel -Ofast -pipe -flto -Wextra -D_REENTRANT -fPIC
+CC := gcc
+CC_FLAGS := -g -Wall
 
 # Директории
 SRC_DIR := src
@@ -8,12 +8,8 @@ BIN_DIR := bin
 
 # Исходные коды
 CSOURCES := $(wildcard $(SRC_DIR)/*.c)
-CXXSOURCES := $(wildcard $(SRC_DIR)/*.cpp)
-
-TARGET := $(BIN_DIR)/netrabbit
-
+TARGET := $(BIN_DIR)/gost_28147
 TARGETS := $(patsubst $(SRC_DIR)/%.c,%,$(CSOURCES))
-
 BINS := $(wildcard $(BIN_DIR)/*)
 
 SUDO		  	= sudo
@@ -40,7 +36,7 @@ STRIP         	= strip
 all: build install clean
 
 build:
-	$(CXX) $(LIBS) $(LIBS_DIRS) $(CXX_FLAGS) $(CXXSOURCES) -o $(TARGET)
+	$(CC) $(LIBS) $(LIBS_DIRS) $(CC_FLAGS) $(CSOURCES) -o $(TARGET)
 
 install:
 	@for file in $(wildcard $(BIN_DIR)/*); do \
